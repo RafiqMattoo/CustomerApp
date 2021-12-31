@@ -21,13 +21,13 @@ export class CustomerService {
     return this.httpClient.get(`${this.baseURL}/${id}`);
   }
   addCustomer(data): Observable<any> {
-    return this.httpClient.post(this.baseURL, data);
+    return this.httpClient.post(this.baseURL + '/AddCustomer', data);
   }
-  updateCustomer(id, data): Observable<any> {
-    return this.httpClient.put(`${this.baseURL}/${id}`, data);
+  updateCustomer(data): Observable<any> {
+    return this.httpClient.put(`${this.baseURL}/UpdateCustomer`, data);
   }
   deleteCustomer(id): Observable<any> {
-    return this.httpClient.delete(`${this.baseURL}/${id}`);
+    return this.httpClient.delete(`${this.baseURL}/DeleteCustomer/${id}`);
   }
   deleteAllCustomer(): Observable<any> {
     return this.httpClient.delete(this.baseURL);

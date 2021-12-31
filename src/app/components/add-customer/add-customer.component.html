@@ -1,1 +1,14 @@
-<p>add-customer works!</p>
+<div style="padding: 10px;">
+    <form [formGroup]="form" (ngSubmit)="addCustomer()">
+        <div>
+            <label>Customer Name</label>
+            <br/>
+            <input type="text" formControlName="name" placeholder="Customer Name" required/>
+            <label style="color:red" *ngIf="form.controls.name?.errors?.required">
+                Customer Name is required
+            </label>
+        </div>
+        <br/>
+        <button type="submit" [disabled]="!form.valid">Save</button>
+    </form>
+</div>
