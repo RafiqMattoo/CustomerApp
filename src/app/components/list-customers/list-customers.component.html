@@ -18,7 +18,7 @@
             
             <td>
                 <button  class = "btn btn-primary" [routerLink]="'/edit-customer/' + employee.Id"> Edit Customer</button>
-                <button   class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button   class = "btn btn-danger" style="margin-left: 10px" (click)="deleteCustomer(employee.Id)"> Delete</button>
                 <button   class = "btn btn-secondary" style="margin-left: 10px"> View Addresses</button>
             </td>
         </tr>

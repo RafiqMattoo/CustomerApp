@@ -22,6 +22,15 @@ export class ListCustomersComponent implements OnInit {
   getCustomerList() {  
    this.custservice.getCustomerList();  
   }  
+
+  deleteCustomer(id) {
+    this.custservice.deleteCustomer(id).subscribe(res =>{
+      alert('Customer deleted successfully.');
+      this.loadAllCustomers();
+    }, err => {
+      alert('Error occured. Please try again...');
+    });
+  }
    
 
 }
