@@ -12,14 +12,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let employee of allCustomers | async" >
-            <td> {{ employee.Id }} </td>
-            <td> {{ employee.Name }} </td>
+        <tr *ngFor = "let customer of allCustomers | async" >
+            <td> {{ customer.Id }} </td>
+            <td> {{ customer.Name }} </td>
             
             <td>
-                <button  class = "btn btn-primary" [routerLink]="'/edit-customer/' + employee.Id"> Edit Customer</button>
-                <button   class = "btn btn-danger" style="margin-left: 10px" (click)="deleteCustomer(employee.Id)"> Delete</button>
-                <button   class = "btn btn-secondary" style="margin-left: 10px"> View Addresses</button>
+                <button  class = "btn btn-primary" [routerLink]="'/edit-customer/' + customer.Id"> Edit Customer</button>
+                <button   class = "btn btn-danger" style="margin-left: 10px" (click)="deleteCustomer(customer.Id)"> Delete</button>
+                <button   class = "btn btn-secondary" [routerLink]="'/list-customer-addresses/' + customer.Id"  style="margin-left: 10px"> View Addresses</button>
             </td>
         </tr>
     </tbody>
